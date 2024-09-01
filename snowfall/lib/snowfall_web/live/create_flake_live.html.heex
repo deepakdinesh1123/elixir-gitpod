@@ -1,0 +1,31 @@
+<div class="flex items-center justify-center sn-gradient">
+    <h1 class="font-brand font-bold text-3xl text-white"> Instantly share flakes </h1>
+</div>
+<.form for={@form} phx-submit="create" phx-change="validate">
+    <div class="justify-center px-28 w-full space-y-4 mb-10">
+        <.input field={@form[:description]} placeholder="flake description" autocomplete="off" phx-debounce="blur"/> 
+        <div>
+            <div class="flex p-2 items-center bg-snDark rounded-t-md border">
+                <div class="w-[300px] mb-2">
+                    <.input field={@form[:name]} placeholder="Flake name" phx-debounce="blur"/>
+                </div>
+            </div>
+            <div class="flex w-full">
+                <textarea id="line-numbers" class="line-numbers rounded-bl-md" readonly>
+                    <%= "1\n"%>
+                </textarea>
+                <.input
+                    type="textarea"
+                    field={@form[:markup_text]}
+                    class="flake-area rounded-br-md"
+                    placeholder="Insert code..."
+                    autocomplete="off",
+                    phx-debounce="blur"            
+                />
+            </div>
+        </div>
+        <div class="flex justify-end">
+        <.button class="create_button" phx-disable-with="Creating...">Create gist</.button>
+        </div>
+    </div>
+</.form>

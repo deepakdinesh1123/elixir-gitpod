@@ -17,6 +17,11 @@
     font-style: normal;
 }
 
+.sn-gradient {
+    background-image: linear-gradient(to bottom, #631A61, #551653, #340E33, #010101);
+    height: 225px;
+}
+
 .dropdown-menu-arrow::before {
     content: "";
     position: absolute;
@@ -49,4 +54,37 @@
     border-width: 3px 3px 0 3px;
     border-color: white transparent transparent transparent;
     border-style: solid;
+}
+
+form input[type="text"] {
+    @apply bg-snDark-dark font-brand font-regular text-white text-xs border border-white
+}
+
+form input[type="text"]:focus {
+    @apply focus:outline-none focus:border-snLavender focus:ring-0
+}
+
+
+.flake-area {
+    @apply bg-snDark-dark font-brand font-regular text-white text-xs border border-white h-[300px] resize-none;
+    border-top: none;
+    border-left: none;
+}
+
+.line-numbers {
+    @apply border border-white font-brand font-regular text-xs text-snDark-light bg-snDark-dark h-[300px] w-[54px] text-right overflow-hidden resize-none;
+    border-right: none;
+    border-top: none;
+}
+
+.line-numbers:focus {
+    @apply focus:outline-none focus:border-white focus:ring-0;
+}
+
+.create_button {
+    @apply bg-snPurple border border-white font-brand font-regular text-black text-base
+}
+
+.create_button:hover {
+    @apply hover:bg-snPurple-dark text-snDark-light border-snDark-light
 }
